@@ -1,7 +1,6 @@
 import CreateUser from "./pages/CreateUser";
-import PurchaseItem from "./pages/PurchaseItem";
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 function App() {
   const [userData, setuserData] = useState([]);
