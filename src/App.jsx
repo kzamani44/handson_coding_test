@@ -5,9 +5,15 @@ import './App.css';
 function App() {
 	const raw = JSON.parse(localStorage.getItem('user')) || {};
 
+  const rawItem = JSON.parse(localStorage.getItem('items')) || {};
+
 	const storedUsers = Object.keys(raw)
 		.filter((key) => !isNaN(key)) // only keep numeric keys
 		.map((key) => raw[key]);
+
+  	const storedItems = Object.keys(rawItem)
+		.filter((key) => !isNaN(key)) // only keep numeric keys
+		.map((key) => rawItem[key]);
 
     if(!storedUsers){
       return
@@ -50,6 +56,24 @@ function App() {
 
 					<div>
 						<h2>Items</h2>
+            <table>
+							<thead>
+								<tr>
+									<th>S/N</th>
+									<th>Item name</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								{storedItems.map((item, index) => (
+									<tr key={index}>
+										<td>{index + 1}</td>
+										<td>{item.itemName}</td>
+										<td>{item.itemPrice}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

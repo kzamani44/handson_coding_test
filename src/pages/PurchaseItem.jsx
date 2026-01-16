@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const items = [
-	{ itemid: '#1', item_name: 'Apple', item_price: 40 },
-	{ itemId: '#2', item_name: 'Banana', item_price: 20 },
-	{ itemId: '#3', item_name: 'Berry', item_price: 5 },
-	{ itemId: '#4', item_name: 'Coffee', item_price: 10 },
-	{ itemId: '#5', item_name: 'Milk', item_price: 2.5 },
-];
+
 function PurchaseItem() {
 	const [itemName, setItemName] = useState('');
 	const [itemPrice, setItemPrice] = useState('');
@@ -21,7 +15,7 @@ function PurchaseItem() {
 
         const updatedItems = [...storedItems, itemData];
         
-		// Add user detail to localStorage
+		// Add item detail to localStorage
 		localStorage.setItem('items', JSON.stringify(updatedItems));
     }
 
