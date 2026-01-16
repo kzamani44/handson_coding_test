@@ -84,7 +84,7 @@ function CreateUser({ setuserData }) {
         </div>
 
         <div>
-          <button type="button">
+          <button type="submit">
             Add Item
           </button>
         </div>
